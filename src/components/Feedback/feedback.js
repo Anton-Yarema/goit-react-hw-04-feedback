@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import Statistics from 'components/Statistics/';
 import FeedbackOptions from 'components/FeedbackOptions';
 import Section from 'components/Section';
