@@ -11,12 +11,21 @@ const Feedback = () => {
   const [bad, setBad] = useState(0);
 
   const handleClick = option => {
-    if (option === 'good') {
-      setGood(prevGood => prevGood + 1);
-    } else if (option === 'neutral') {
-      setNeutral(prevNeutral => prevNeutral + 1);
-    } else if (option === 'bad') {
-      setBad(prevBad => prevBad + 1);
+    const options = Object.keys({ good, neutral, bad });
+    if (options.includes(option)) {
+      switch (option) {
+        case 'good':
+          setGood(prevGood => prevGood + 1);
+          break;
+        case 'neutral':
+          setNeutral(prevNeutral => prevNeutral + 1);
+          break;
+        case 'bad':
+          setBad(prevBad => prevBad + 1);
+          break;
+        default:
+          break;
+      }
     }
   };
 
