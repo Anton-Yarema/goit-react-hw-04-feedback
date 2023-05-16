@@ -11,8 +11,6 @@ const Feedback = () => {
   const [bad, setBad] = useState(0);
 
   const handleClick = option => {
-    const options = Object.keys({ good, neutral, bad });
-    if (options.includes(option)) {
       switch (option) {
         case 'good':
           setGood(prevGood => prevGood + 1);
@@ -26,8 +24,7 @@ const Feedback = () => {
         default:
           break;
       }
-    }
-  };
+     }
 
   const countTotalFeedback = () => {
     return good + neutral + bad;
@@ -46,7 +43,7 @@ const Feedback = () => {
       <h1 className={css.title}>Please leave feedback</h1>
       <Section title="FeedbackOptions">
         <FeedbackOptions
-          options={['good', 'neutral', 'bad']}
+          options={ Object.keys({ good, neutral, bad })}
           onLeaveFeedback={handleClick}
         />
       </Section>
